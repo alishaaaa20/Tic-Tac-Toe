@@ -159,371 +159,287 @@ void Game::set_comp_pos(Player& P){
   std::this_thread::sleep_for(std::chrono::milliseconds(2000));
 
 //place computers symbol in between opponent's symbol (X   O   X)
-    if((c[0].symbol ==' ' || c[1].symbol == ' ' || c[2].symbol == ' ') && (((c[0].symbol == c[2].symbol) && c[0].symbol != ' ') || ((c[0].symbol == c[1].symbol) && (c[0].symbol != ' ')) || ((c[1].symbol == c[2].symbol) && c[1].symbol!=' '))){
-       if(c[0].symbol == ' '){
-          if(c[1].symbol != P.symbol){
-            //check for move which lead to victory
-            check_comp_pos(P);
-          }
-          else{
-              c[0].symbol = P.symbol;
-          }
-       }
-        else if(c[1].symbol == ' '){
-            if(c[0].symbol != P.symbol){
-            check_comp_pos(P);
-          }
-          else{
-              c[1].symbol = P.symbol;
-          }
+    if ((c[0].symbol == ' ' || c[1].symbol == ' ' || c[2].symbol == ' ') && (((c[0].symbol == c[2].symbol) && c[0].symbol != ' ') || ((c[0].symbol == c[1].symbol) && (c[0].symbol != ' ')) || ((c[1].symbol == c[2].symbol) && c[1].symbol != ' '))) {
+      if (c[0].symbol == ' ') {
+        if (c[1].symbol != P.symbol) {
+          // check for move which leads to victory
+          check_comp_pos(P);
+        } else {
+          c[0].symbol = P.symbol;
         }
-        else if(c[2].symbol == ' '){
-            if(c[0].symbol != P.symbol){
-            check_comp_pos(P);
-          }
-          else{
-              c[2].symbol = P.symbol;
-          }
-       }
+      } else if (c[1].symbol == ' ') {
+        if (c[0].symbol != P.symbol) {
+          check_comp_pos(P);
+        } else {
+          c[1].symbol = P.symbol;
+        }
+      } else if (c[2].symbol == ' ') {
+        if (c[0].symbol != P.symbol) {
+          check_comp_pos(P);
+        } else {
+          c[2].symbol = P.symbol;
+        }
+      }
+    } else if ((c[3].symbol == ' ' || c[4].symbol == ' ' || c[5].symbol == ' ') && (((c[3].symbol == c[5].symbol) && c[3].symbol != ' ') || ((c[3].symbol == c[4].symbol) && (c[3].symbol != ' ')) || ((c[4].symbol == c[5].symbol) && c[4].symbol != ' '))) {
+      if (c[3].symbol == ' ') {
+        if (c[4].symbol != P.symbol) {
+          check_comp_pos(P);
+        } else {
+          c[3].symbol = P.symbol;
+        }
+      } else if (c[4].symbol == ' ') {
+        if (c[3].symbol != P.symbol) {
+          check_comp_pos(P);
+        } else {
+          c[4].symbol = P.symbol;
+        }
+      } else if (c[5].symbol == ' ') {
+        if (c[3].symbol != P.symbol) {
+          check_comp_pos(P);
+        } else {
+          c[5].symbol = P.symbol;
+        }
+      }
+    } else if ((c[6].symbol == ' ' || c[7].symbol == ' ' || c[8].symbol == ' ') && (((c[6].symbol == c[8].symbol) && c[6].symbol != ' ') || ((c[6].symbol == c[7].symbol) && (c[6].symbol != ' ')) || ((c[7].symbol == c[8].symbol) && c[7].symbol != ' '))) {
+      if (c[6].symbol == ' ') {
+        if (c[7].symbol != P.symbol) {
+          check_comp_pos(P);
+        } else {
+          c[6].symbol = P.symbol;
+        }
+      } else if (c[7].symbol == ' ') {
+        if (c[6].symbol != P.symbol) {
+          check_comp_pos(P);
+        } else {
+          c[7].symbol = P.symbol;
+        }
+      } else if (c[8].symbol == ' ') {
+        if (c[7].symbol != P.symbol) {
+          check_comp_pos(P);
+        } else {
+          c[8].symbol = P.symbol;
+        }
+      }
+    } else if ((c[0].symbol == ' ' || c[3].symbol == ' ' || c[6].symbol == ' ') && (((c[0].symbol == c[6].symbol) && c[0].symbol != ' ') || ((c[0].symbol == c[3].symbol) && (c[0].symbol != ' ')) || ((c[3].symbol == c[6].symbol) && c[3].symbol != ' '))) {
+      if (c[0].symbol == ' ') {
+        if (c[3].symbol != P.symbol) {
+          check_comp_pos(P);
+        } else {
+          c[0].symbol = P.symbol;
+        }
+      } else if (c[3].symbol == ' ') {
+        if (c[0].symbol != P.symbol) {
+          check_comp_pos(P);
+        } else {
+          c[3].symbol = P.symbol;
+        }
+      } else if (c[6].symbol == ' ') {
+        if (c[0].symbol != P.symbol) {
+          check_comp_pos(P);
+        } else {
+          c[6].symbol = P.symbol;
+        }
+      }
+    } else if ((c[1].symbol == ' ' || c[4].symbol == ' ' || c[7].symbol == ' ') && (((c[1].symbol == c[7].symbol) && c[1].symbol != ' ') || ((c[1].symbol == c[4].symbol) && (c[1].symbol != ' ')) || ((c[4].symbol == c[7].symbol) && c[4].symbol != ' '))) {
+      if (c[1].symbol == ' ') {
+        if (c[4].symbol != P.symbol) {
+          check_comp_pos(P);
+        } else {
+          c[1].symbol = P.symbol;
+        }
+      } else if (c[4].symbol == ' ') {
+        if (c[1].symbol != P.symbol) {
+          check_comp_pos(P);
+        } else {
+          c[4].symbol = P.symbol;
+        }
+      } else if (c[7].symbol == ' ') {
+        if (c[1].symbol != P.symbol) {
+          check_comp_pos(P);
+        } else {
+          c[7].symbol = P.symbol;
+        }
+      }
+    } else if ((c[2].symbol == ' ' || c[5].symbol == ' ' || c[8].symbol == ' ') && (((c[2].symbol == c[8].symbol) && c[2].symbol != ' ') || ((c[2].symbol == c[5].symbol) && (c[2].symbol != ' ')) || ((c[5].symbol == c[8].symbol) && c[5].symbol != ' '))) {
+      if (c[2].symbol == ' ') {
+        if (c[5].symbol != P.symbol) {
+          check_comp_pos(P);
+        } else {
+          c[2].symbol = P.symbol;
+        }
+      } else if (c[5].symbol == ' ') {
+        if (c[2].symbol != P.symbol) {
+          check_comp_pos(P);
+        } else {
+          c[5].symbol = P.symbol;
+        }
+      } else if (c[8].symbol == ' ') {
+        if (c[2].symbol != P.symbol) {
+          check_comp_pos(P);
+        } else {
+          c[8].symbol = P.symbol;
+        }
+      }
+    } else if ((c[0].symbol == ' ' || c[4].symbol == ' ' || c[8].symbol == ' ') && (((c[0].symbol == c[8].symbol) && c[0].symbol != ' ') || ((c[0].symbol == c[4].symbol) && (c[0].symbol != ' ')) || ((c[4].symbol == c[8].symbol) && c[4].symbol != ' '))) {
+      if (c[0].symbol == ' ') {
+        if (c[4].symbol != P.symbol) {
+          check_comp_pos(P);
+        } else {
+          c[0].symbol = P.symbol;
+        }
+      } else if (c[4].symbol == ' ') {
+        if (c[0].symbol != P.symbol) {
+          check_comp_pos(P);
+        } else {
+          c[4].symbol = P.symbol;
+        }
+      } else if (c[8].symbol == ' ') {
+        if (c[0].symbol != P.symbol) {
+          check_comp_pos(P);
+        } else {
+          c[8].symbol = P.symbol;
+        }
+      }
+    } else if ((c[2].symbol == ' ' || c[4].symbol == ' ' || c[6].symbol == ' ') && (((c[2].symbol == c[6].symbol) && c[2].symbol != ' ') || ((c[2].symbol == c[4].symbol) && (c[2].symbol != ' ')) || ((c[4].symbol == c[6].symbol) && c[4].symbol != ' '))) {
+      if (c[2].symbol == ' ') {
+        if (c[4].symbol != P.symbol) {
+          check_comp_pos(P);
+        } else {
+          c[2].symbol = P.symbol;
+        }
+      } else if (c[4].symbol == ' ') {
+        if (c[2].symbol != P.symbol) {
+          check_comp_pos(P);
+        } else {
+          c[4].symbol = P.symbol;
+        }
+      } else if (c[6].symbol == ' ') {
+        if (c[2].symbol != P.symbol) {
+          check_comp_pos(P);
+        } else {
+          c[6].symbol = P.symbol;
+        }
+      }
     }
-   else if((c[3].symbol ==' ' || c[4].symbol ==' ' || c[5].symbol == ' ') && (((c[3].symbol == c[5].symbol) && c[3].symbol !=' ') || ((c[3].symbol == c[4].symbol) && (c[3].symbol !=' '))|| ((c[4].symbol == c[5].symbol) && c[4].symbol !=' '))){
-     if(c[3].symbol == ' '){
-         if(c[4].symbol != P.symbol){
-            check_comp_pos(P);
-          }
-          else{
-           c[3].symbol = P.symbol; 
-          }
-     }
-
-      else if(c[4].symbol == ' '){
-            if(c[3].symbol != P.symbol){
-            check_comp_pos(P);
-          }
-          else{
-           c[4].symbol = P.symbol; 
-          }
-        }
-
-      else if(c[5].symbol == ' '){
-          if(c[3].symbol != P.symbol){
-            check_comp_pos(P);
-          }
-          else{
-           c[5].symbol = P.symbol; 
-          }
-        }
-   }
-   else if((c[6].symbol ==' ' || c[7].symbol ==' '|| c[8].symbol == ' ') && (((c[6].symbol == c[8].symbol) && c[6].symbol !=' ') || ((c[6].symbol == c[7].symbol) && (c[6].symbol !=' ')) || ((c[7].symbol == c[8].symbol) && c[7].symbol !=' '))){
-       if(c[6].symbol == ' '){
-           if(c[7].symbol != P.symbol){
-            check_comp_pos(P);
-          }
-          else{
-           c[6].symbol = P.symbol; 
-          }
-       }
-
-        else if(c[7].symbol == ' '){
-            if(c[6].symbol != P.symbol){
-            check_comp_pos(P);
-          }
-          else{
-           c[7].symbol = P.symbol; 
+    //move against corner input by opponent
+    else if ((c[0].symbol != ' ' && c[4].symbol == ' ') || (c[6].symbol != ' ' && c[4].symbol == ' ')) {
+      if (c[0].symbol != ' ' && c[4].symbol == ' ') {
+        c[4].symbol = P.symbol;
+      } else if (c[6].symbol != ' ' && c[4].symbol == ' ') {
+        c[4].symbol = P.symbol;
+      }
+    } else if ((c[0].symbol != ' ' && c[4].symbol != ' ' && c[3].symbol == ' ') || (c[6].symbol != ' ' && c[4].symbol != ' ' && c[3].symbol == ' ')) {
+      if (c[0].symbol != ' ' && c[4].symbol != ' ') {
+        c[3].symbol = P.symbol;
+      } else if (c[6].symbol != ' ' && c[4].symbol != ' ') {
+        c[3].symbol = P.symbol;
+      }
+    } else {
+      //target bottom left corner
+      if (c[6].symbol == ' ' && c[4].symbol != ' ') {
+        c[6].symbol = P.symbol;
+      }
+      //target top right corner
+      else if (c[2].symbol == ' ' && c[4].symbol != ' ') {
+        c[2].symbol = P.symbol;
+      }
+      //top left
+      else if (c[0].symbol == ' ' && c[4].symbol != ' ') {
+        c[0].symbol = P.symbol;
+      }
+      //Always target the center first
+      else if (c[4].symbol == ' ') {
+        c[4].symbol = P.symbol;
+      } else if (c[6].symbol != ' ' && c[6].symbol != P.symbol && c[7].symbol == ' ') {
+        c[7].symbol = P.symbol;
+      } else if (c[1].symbol != ' ' && c[1].symbol != P.symbol && c[2].symbol == ' ') {
+        c[2].symbol = P.symbol;
+      }
+      //if no condition satisfies randomly choose a empty position
+      else {
+        for (int i = 8; i >= 0; i--) {
+          if (c[i].symbol == ' ') {
+            c[i].symbol = P.symbol;
+            break;
           }
         }
-
-        else if(c[8].symbol == ' '){
-            if(c[7].symbol != P.symbol){
-            check_comp_pos(P);
-          }
-          else{
-        c[8].symbol = P.symbol; 
-          }
-        }
-   }
-   else if((c[0].symbol ==' ' || c[3].symbol==' '|| c[6].symbol == ' ') && (((c[0].symbol==c[6].symbol) && c[0].symbol !=' ') ||  ((c[0].symbol == c[3].symbol) && (c[0].symbol !=' ')) || ((c[3].symbol == c[6].symbol) && c[3].symbol != ' '))){
-       if(c[0].symbol == ' '){
-           if(c[3].symbol != P.symbol){
-            check_comp_pos(P);
-          }
-          else{
-              c[0].symbol = P.symbol;
-          }
-       }
-
-        else if(c[3].symbol == ' '){
-            if(c[0].symbol != P.symbol){
-            check_comp_pos(P);
-          }
-          else{
-        c[3].symbol = P.symbol; 
-          }
-        }
-
-    else if(c[6].symbol == ' '){
-        if(c[0].symbol != P.symbol){
-            check_comp_pos(P);
-          }
-          else{
-        c[6].symbol = P.symbol; 
-          }
-       } 
-   }
-   else if((c[1].symbol ==' ' || c[4].symbol == ' '|| c[7].symbol == ' ') && (((c[1].symbol==c[7].symbol)&& c[1].symbol !=' ') ||  ((c[1].symbol == c[4].symbol)&&(c[1].symbol!=' ')) || ((c[4].symbol== c[7].symbol) && c[4].symbol !=' '))){
-       if(c[1].symbol == ' '){
-           if(c[4].symbol != P.symbol){
-            check_comp_pos(P);
-          }
-          else{
-        c[1].symbol = P.symbol; 
-          }
-       }
-
-        else if(c[4].symbol == ' '){
-            if(c[1].symbol != P.symbol){
-            check_comp_pos(P);
-          }
-          else{
-        c[4].symbol = P.symbol; 
-          }
-        }
-
-        else if(c[7].symbol == ' '){
-            if(c[1].symbol != P.symbol){
-            check_comp_pos(P);
-          }
-          else{
-        c[7].symbol = P.symbol; 
-          }
-        }
-   }
-   else if((c[2].symbol ==' ' || c[5].symbol == ' '|| c[8].symbol == ' ') && (((c[2].symbol==c[8].symbol)&&c[2].symbol !=' ') || ((c[2].symbol == c[5].symbol)&& (c[2].symbol !=' ')) || ((c[5].symbol== c[8].symbol) && c[5].symbol !=' '))){
-       if(c[2].symbol == ' '){
-           if(c[5].symbol != P.symbol){
-            check_comp_pos(P);
-          }
-          else{
-        c[2].symbol = P.symbol; 
-          }
-       }
-
-        else if(c[5].symbol == ' '){
-            if(c[2].symbol != P.symbol){
-            check_comp_pos(P);
-          }
-          else{
-        c[5].symbol = P.symbol; 
-          }
-        }
-
-        else if(c[8].symbol == ' '){
-            if(c[2].symbol != P.symbol){
-            check_comp_pos(P);
-          }
-          else{
-        c[8].symbol = P.symbol; 
-          }
-        }
-   }
-   else if((c[0].symbol ==' ' || c[4].symbol ==' '|| c[8].symbol == ' ') && (((c[0].symbol == c[8].symbol) && c[0].symbol !=' ') || ((c[0].symbol == c[4].symbol)&&(c[0].symbol!=' ')) || ((c[4].symbol== c[8].symbol) && c[4].symbol !=' '))){
-       if(c[0].symbol == ' '){
-           if(c[4].symbol != P.symbol){
-            check_comp_pos(P);
-          }
-          else{
-              c[0].symbol = P.symbol;
-          }
-       }
-
-        else if(c[4].symbol == ' '){
-            if(c[0].symbol != P.symbol){
-            check_comp_pos(P);
-          }
-          else{
-        c[4].symbol = P.symbol; 
-          }
-        }
-
-        else if(c[8].symbol == ' '){
-            if(c[0].symbol != P.symbol){
-            check_comp_pos(P);
-          }
-          else{
-        c[8].symbol = P.symbol; 
-          }
-        }
-   }
-   else if((c[2].symbol ==' ' || c[4].symbol==' ' || c[6].symbol==' ') && (((c[2].symbol == c[6].symbol) && c[2].symbol !=' ') || ((c[2].symbol == c[4].symbol)&& (c[2].symbol !=' ')) || ((c[4].symbol == c[6].symbol) && c[4].symbol!=' '))){
-       if(c[2].symbol == ' '){
-           if(c[4].symbol != P.symbol){
-            check_comp_pos(P);
-          }
-          else{
-        c[2].symbol = P.symbol; 
-          }
-       }
-        else if(c[4].symbol == ' '){
-            if(c[2].symbol != P.symbol){
-            check_comp_pos(P);
-          }
-          else{
-        c[4].symbol = P.symbol; 
-          }
-        }
-
-        else if(c[6].symbol == ' '){
-            if(c[2].symbol != P.symbol){
-            check_comp_pos(P);
-          }
-          else{
-        c[6].symbol = P.symbol; 
-          }
-        }
-     }
-     //move against corner input by opponent
-     else if((c[0].symbol != ' ' && c[4].symbol == ' ' || c[6].symbol != ' ' && c[4].symbol == ' ')){
-       if(c[0].symbol != ' ' && c[4].symbol == ' '){
-         c[4].symbol = P.symbol;
-       }
-       
-       else if(c[6].symbol != ' ' && c[4].symbol == ' '){
-         c[4].symbol = P.symbol;
-       }
-       
-     }
-     else if((c[0].symbol != ' ' && c[4].symbol != ' ' && c[3].symbol == ' '|| c[6].symbol != ' ' && c[4].symbol != ' ' && c[3].symbol ==' ')){
-       if(c[0].symbol != ' ' && c[4].symbol != ' '){
-         c[3].symbol = P.symbol;
-       }
-       
-       else if(c[6].symbol != ' ' && c[4].symbol != ' '){
-         c[3].symbol = P.symbol;
-       }
-       
-     }
-   else{
-       
-       //target bottom left corner
-        if(c[6].symbol == ' ' && c[4].symbol !=' '){
-            c[6].symbol = P.symbol;
-       }
-       //target top right corner
-       else if(c[2].symbol == ' '&& c[4].symbol !=' '){
-           c[2].symbol = P.symbol;
-       }
-       //top left
-       else if(c[0].symbol == ' '&& c[4].symbol !=' '){
-           c[0].symbol = P.symbol;
-       }
-       //Always target the center first
-       else if(c[4].symbol == ' '){
-           c[4].symbol = P.symbol;
-       }
-
-       else if(c[6].symbol !=' ' && c[6].symbol != P.symbol && c[7].symbol == ' '){
-         c[7].symbol = P.symbol;
-       }
-
-       else if(c[1].symbol !=' ' && c[1].symbol != P.symbol && c[2].symbol == ' '){
-         c[2].symbol = P.symbol;
-       }
-       //if no condition satisfies randomly choose a empty position
-       else{
-           for(int i = 8 ; i >= 0 ; i--){
-               if(c[i].symbol ==' '){
-                   c[i].symbol = P.symbol;
-                   break;
-               }
-           }
-       }
-  }
+      }
+    }
 }
 
 void Game::check_comp_pos(Player& P){
-  if((c[2].symbol ==' ' || c[4].symbol==' ' || c[6].symbol==' ') && (((c[2].symbol == c[6].symbol) && c[2].symbol !=' ') || ((c[2].symbol == c[4].symbol)&& (c[2].symbol !=' ')) || ((c[4].symbol == c[6].symbol) && c[4].symbol!=' '))){
-       if(c[2].symbol == ' ')
-        c[2].symbol = P.symbol; 
-
-        else if(c[4].symbol == ' ')
-        c[4].symbol = P.symbol; 
-
-        else if(c[6].symbol == ' ')
-        c[6].symbol = P.symbol; 
-   }
-   else if((c[0].symbol ==' ' || c[4].symbol ==' '|| c[8].symbol == ' ') && (((c[0].symbol == c[8].symbol) && c[0].symbol !=' ') || ((c[0].symbol == c[4].symbol)&&(c[0].symbol!=' ')) || ((c[4].symbol== c[8].symbol) && c[4].symbol !=' '))){
-       if(c[0].symbol == ' ')
-        c[0].symbol = P.symbol; 
-
-        else if(c[4].symbol == ' ')
-        c[4].symbol = P.symbol; 
-
-        else if(c[8].symbol == ' ')
-        c[8].symbol = P.symbol; 
-   }
-   else if((c[2].symbol ==' ' || c[5].symbol == ' '|| c[8].symbol == ' ') && (((c[2].symbol==c[8].symbol)&&c[2].symbol !=' ') || ((c[2].symbol == c[5].symbol)&& (c[2].symbol !=' ')) || ((c[5].symbol== c[8].symbol) && c[5].symbol !=' '))){
-       if(c[2].symbol == ' ')
-        c[2].symbol = P.symbol; 
-
-        else if(c[5].symbol == ' ')
-        c[5].symbol = P.symbol; 
-
-        else if(c[8].symbol == ' ')
-        c[8].symbol = P.symbol; 
-   }
-   else if((c[1].symbol ==' ' || c[4].symbol == ' '|| c[7].symbol == ' ') && (((c[1].symbol==c[7].symbol)&& c[1].symbol !=' ') ||  ((c[1].symbol == c[4].symbol)&&(c[1].symbol!=' ')) || ((c[4].symbol== c[7].symbol) && c[4].symbol !=' '))){
-       if(c[1].symbol == ' ')
-        c[1].symbol = P.symbol; 
-
-        else if(c[4].symbol == ' ')
-        c[4].symbol = P.symbol; 
-
-        else if(c[7].symbol == ' ')
-        c[7].symbol = P.symbol; 
-   }
-   else if((c[0].symbol ==' ' || c[3].symbol==' '|| c[6].symbol == ' ') && (((c[0].symbol==c[6].symbol) && c[0].symbol !=' ') ||  ((c[0].symbol == c[3].symbol) && (c[0].symbol !=' ')) || ((c[3].symbol == c[6].symbol) && c[3].symbol != ' '))){
-       if(c[0].symbol == ' ')
-        c[0].symbol = P.symbol; 
-
-        else if(c[3].symbol == ' ')
-        c[3].symbol = P.symbol; 
-
-        else if(c[6].symbol == ' ')
-        c[6].symbol = P.symbol; 
-   }
-   else if((c[6].symbol ==' ' || c[7].symbol ==' '|| c[8].symbol == ' ') && (((c[6].symbol == c[8].symbol) && c[6].symbol !=' ') || ((c[6].symbol == c[7].symbol) && (c[6].symbol !=' ')) || ((c[7].symbol == c[8].symbol) && c[7].symbol !=' '))){
-       if(c[6].symbol == ' ')
-        c[6].symbol = P.symbol; 
-
-        else if(c[7].symbol == ' ')
-        c[7].symbol = P.symbol; 
-
-        else if(c[8].symbol == ' ')
-        c[8].symbol = P.symbol; 
-   }
-   else if((c[3].symbol ==' ' || c[4].symbol ==' ' || c[5].symbol == ' ') && (((c[3].symbol == c[5].symbol) && c[3].symbol !=' ') || ((c[3].symbol == c[4].symbol) && (c[3].symbol !=' '))|| ((c[4].symbol == c[5].symbol) && c[4].symbol !=' '))){
-     if(c[3].symbol == ' ')
-        c[3].symbol = P.symbol; 
-
-        else if(c[4].symbol == ' ')
-        c[4].symbol = P.symbol; 
-
-        else if(c[5].symbol == ' ')
-        c[5].symbol = P.symbol; 
-   }
-    else if((c[0].symbol ==' ' || c[1].symbol == ' ' || c[2].symbol == ' ') && (((c[0].symbol == c[2].symbol) && c[0].symbol != ' ') || ((c[0].symbol == c[1].symbol) && (c[0].symbol != ' ')) || ((c[1].symbol == c[2].symbol)&&c[1].symbol!=' '))){
-       if(c[0].symbol == ' '){
-          c[0].symbol = P.symbol;
-       }
-
-        else if(c[1].symbol == ' '){
-              c[1].symbol = P.symbol;
-          
-        }
-        else if(c[2].symbol == ' '){
-              c[2].symbol = P.symbol;
-        }
-   }
+  if ((c[2].symbol == ' ' || c[4].symbol == ' ' || c[6].symbol == ' ') && (((c[2].symbol == c[6].symbol) && c[2].symbol != ' ') || ((c[2].symbol == c[4].symbol) && (c[2].symbol != ' ')) || ((c[4].symbol == c[6].symbol) && c[4].symbol != ' '))) {
+    if (c[2].symbol == ' ') {
+      c[2].symbol = P.symbol;
+    } else if (c[4].symbol == ' ') {
+      c[4].symbol = P.symbol;
+    } else if (c[6].symbol == ' ') {
+      c[6].symbol = P.symbol;
+    }
+  }
+  else if ((c[0].symbol == ' ' || c[4].symbol == ' ' || c[8].symbol == ' ') && (((c[0].symbol == c[8].symbol) && c[0].symbol != ' ') || ((c[0].symbol == c[4].symbol) && (c[0].symbol != ' ')) || ((c[4].symbol == c[8].symbol) && c[4].symbol != ' '))) {
+    if (c[0].symbol == ' ') {
+      c[0].symbol = P.symbol;
+    } else if (c[4].symbol == ' ') {
+      c[4].symbol = P.symbol;
+    } else if (c[8].symbol == ' ') {
+      c[8].symbol = P.symbol;
+    }
+  }
+  else if ((c[2].symbol == ' ' || c[5].symbol == ' ' || c[8].symbol == ' ') && (((c[2].symbol == c[8].symbol) && c[2].symbol != ' ') || ((c[2].symbol == c[5].symbol) && (c[2].symbol != ' ')) || ((c[5].symbol == c[8].symbol) && c[5].symbol != ' '))) {
+    if (c[2].symbol == ' ') {
+      c[2].symbol = P.symbol;
+    } else if (c[5].symbol == ' ') {
+      c[5].symbol = P.symbol;
+    } else if (c[8].symbol == ' ') {
+      c[8].symbol = P.symbol;
+    }
+  }
+  else if ((c[1].symbol == ' ' || c[4].symbol == ' ' || c[7].symbol == ' ') && (((c[1].symbol == c[7].symbol) && c[1].symbol != ' ') || ((c[1].symbol == c[4].symbol) && (c[1].symbol != ' ')) || ((c[4].symbol == c[7].symbol) && c[4].symbol != ' '))) {
+    if (c[1].symbol == ' ') {
+      c[1].symbol = P.symbol;
+    } else if (c[4].symbol == ' ') {
+      c[4].symbol = P.symbol;
+    } else if (c[7].symbol == ' ') {
+      c[7].symbol = P.symbol;
+    }
+  }
+  else if ((c[0].symbol == ' ' || c[3].symbol == ' ' || c[6].symbol == ' ') && (((c[0].symbol == c[6].symbol) && c[0].symbol != ' ') || ((c[0].symbol == c[3].symbol) && (c[0].symbol != ' ')) || ((c[3].symbol == c[6].symbol) && c[3].symbol != ' '))) {
+    if (c[0].symbol == ' ') {
+      c[0].symbol = P.symbol;
+    } else if (c[3].symbol == ' ') {
+      c[3].symbol = P.symbol;
+    } else if (c[6].symbol == ' ') {
+      c[6].symbol = P.symbol;
+    }
+  }
+  else if ((c[6].symbol == ' ' || c[7].symbol == ' ' || c[8].symbol == ' ') && (((c[6].symbol == c[8].symbol) && c[6].symbol != ' ') || ((c[6].symbol == c[7].symbol) && (c[6].symbol != ' ')) || ((c[7].symbol == c[8].symbol) && c[7].symbol != ' '))) {
+    if (c[6].symbol == ' ') {
+      c[6].symbol = P.symbol;
+    } else if (c[7].symbol == ' ') {
+      c[7].symbol = P.symbol;
+    } else if (c[8].symbol == ' ') {
+      c[8].symbol = P.symbol;
+    }
+  }
+  else if ((c[3].symbol == ' ' || c[4].symbol == ' ' || c[5].symbol == ' ') && (((c[3].symbol == c[5].symbol) && c[3].symbol != ' ') || ((c[3].symbol == c[4].symbol) && (c[3].symbol != ' ')) || ((c[4].symbol == c[5].symbol) && c[4].symbol != ' '))) {
+    if (c[3].symbol == ' ') {
+      c[3].symbol = P.symbol;
+    } else if (c[4].symbol == ' ') {
+      c[4].symbol = P.symbol;
+    } else if (c[5].symbol == ' ') {
+      c[5].symbol = P.symbol;
+    }
+  }
+  else if ((c[0].symbol == ' ' || c[1].symbol == ' ' || c[2].symbol == ' ') && (((c[0].symbol == c[2].symbol) && c[0].symbol != ' ') || ((c[0].symbol == c[1].symbol) && (c[0].symbol != ' ')) || ((c[1].symbol == c[2].symbol) && c[1].symbol != ' '))) {
+    if (c[0].symbol == ' ') {
+      c[0].symbol = P.symbol;
+    } else if (c[1].symbol == ' ') {
+      c[1].symbol = P.symbol;
+    } else if (c[2].symbol == ' ') {
+      c[2].symbol = P.symbol;
+    }
+  }
        
 }
 
@@ -560,82 +476,61 @@ void Player::input_player_detail(){
   //input only if player is not a computer
 if(!is_comp){
   //no need to ask for the symbol of the second player
- if(count == 0)
- {
-    cout<<"Enter Player1 Name\n";
-    //cin doesn't take characters after space
-    cin>>name;
-      cout<<"Choose a symbol 'X' or 'O',X will be the first Player"<<'\n';
-      char ch;
-      std::cin >> ch;
-    if(ch == 'X'||ch == 'x')
-    {
-        symbol= 'X';
-        cout<<"X selected as symbol for "<<this->name<<'\n';
-        count++;
-        sym = symbol;
-    }
-    else if(ch == 'O'||ch =='o')
-    {
-        symbol= 'O';
-        cout<<"O selected as symbol for "<<this->name<<'\n';
-        count++;
-        sym = symbol;
-
-        is_my_turn = !is_my_turn;
-
-    }
-    //Automatically select 'X' for invalid selection by user
-    else{
-        cout<<"Invalid Input\n";
-        cout<<"X selected as symbol for "<<this->name<<" by default"<<'\n';
-        //input count increased
-        count++;
-        symbol= 'X';
-        sym = symbol;
-       }
-
-   }
-
-//only take the players detail if game mode is multiplayer
-    else
-    {
-        cout<<"Enter Player2 Name\n";
-        cin>>name;
-        if(sym == 'X')
-        {
-         symbol = 'O';
-         cout<<"O is the symbol for "<<this->name<<'\n';
-         //Not your turn if you choose 'O';
-         is_my_turn = !is_my_turn;
-        }
-
-        else
-        {
-            symbol = 'X';
-            cout<<"X is the symbol for "<<this->name<<'\n';
-        }
-    }
+if (count == 0) {
+  cout << "Enter Player1 Name\n";
+  //cin doesn't take characters after space
+  cin >> name;
+  cout << "Choose a symbol 'X' or 'O', X will be the first Player" << '\n';
+  char ch;
+  std::cin >> ch;
+  if (ch == 'X' || ch == 'x') {
+    symbol = 'X';
+    cout << "X selected as symbol for " << this->name << '\n';
+    count++;
+    sym = symbol;
+  } else if (ch == 'O' || ch == 'o') {
+    symbol = 'O';
+    cout << "O selected as symbol for " << this->name << '\n';
+    count++;
+    sym = symbol;
+    is_my_turn = !is_my_turn;
+  } else {
+    cout << "Invalid Input\n";
+    cout << "X selected as symbol for " << this->name << " by default" << '\n';
+    //input count increased
+    count++;
+    symbol = 'X';
+    sym = symbol;
+  }
+} else {
+  cout << "Enter Player2 Name\n";
+  cin >> name;
+  if (sym == 'X') {
+    symbol = 'O';
+    cout << "O is the symbol for " << this->name << '\n';
+    //Not your turn if you choose 'O';
+    is_my_turn = !is_my_turn;
+  } else {
+    symbol = 'X';
+    cout << "X is the symbol for " << this->name << '\n';
+  }
+}
  
     
 //Sleep(1000);
 system("clear");
  }
  //automatically select symbol for second player
- else
- {
-     if(sym == 'X'){
-         symbol = 'O';
-         cout<<"O is the symbol for Computer\n";
-
-          is_my_turn = !is_my_turn;
-        }
-
-        else{
-            symbol = 'X';
-            cout<<"X is the symbol for Computer\n";
-        }
-   }
+else {
+  if (sym == 'X') {
+    symbol = 'O';
+    cout << "O is the symbol for Computer\n";
+    is_my_turn = !is_my_turn;
+  } else {
+    symbol = 'X';
+    cout << "X is the symbol for Computer\n";
+  }
+}
 //Sleep(1000);
 system("clear");
 }
@@ -650,7 +545,7 @@ displayGraphics(p1,p2);
 int Player::count;
 char Player::sym;
 Coordinates Game::c[9];
-int Game::play_count;
+int Game::play_count; 
 
 
 int main(){
